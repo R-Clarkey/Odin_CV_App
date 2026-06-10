@@ -1,0 +1,66 @@
+/* =================================
+    APP
+==================================*/
+
+* {
+  box-sizing:border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#app-main-container{
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+}
+
+#app-forms-container{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    background-color: green;
+}
+
+#app-display-container{
+    width: 70%;
+    background-color: red;
+}
+
+/* =================================
+    NAV
+==================================*/
+
+#nav-navbar{
+    display: flex;
+    flex: row;
+    background-color: blue;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+#nav-title{
+    width: 70%;
+}
+
+#nav-options-container{
+    display: flex;
+    flex-direction: row;
+    width: 30%;
+}
+
+/* =================================
+    CV
+==================================*/
+
+/* =================================
+    EDUCATION
+==================================*/
+
+/* =================================
+    EXPERIENCE
+==================================*/
+
+/* =================================
+    GENERAL
+==================================*/
