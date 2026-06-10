@@ -2,20 +2,19 @@ import React from "react";
 
 export default function CVDisplay({general = {}, education = [], experience=[]}){
 
-    console.log("education prop is", education, Array.isArray(education), education.length);
 
     return(
         <>
         <div id="display-general-container">
             <div id="display-general-name">
-                {general.name}
+                {general.name || "John Smith"}
             </div>
             <div id="display-general-details-container">
                 <div id="display-general-email">
-                    {general.email}
+                    {general.email || "john@smith.com"}
                 </div>
                 <div id="display-general-phone">
-                    {general.phone}
+                    {general.phone || "0774287405"}
                 </div>
             </div>
         </div>
@@ -43,10 +42,10 @@ export default function CVDisplay({general = {}, education = [], experience=[]})
                 experience.map((exp, i) => (
                     <section key={i} className="display-list-item">
                         <div className="display-item-information">
-                            <h3 className="display-item-workplace">{exp.workplace}</h3>
-                            <p className="display-item-date">{exp.start} - {exp.end}</p>
+                            <h3 className="display-item-workplace">{exp.workplace || "Workplace"}</h3>
+                            <p className="display-item-date">{exp.start || "Start"} - {exp.end || "End"}</p>
                         </div>
-                        <p className="display-item-role-description">{exp.description}</p>
+                        <p className="display-item-role-description">{exp.description || "Description Text"}</p>
                     </section>
             ))}
             </div>

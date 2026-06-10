@@ -7,11 +7,11 @@ export default function Nav(){
             <div id="nav-title">
                 CV App
             </div>
-            <div id="nav-options-container">
+            {/* <div id="nav-options-container">
                 <button className="nav-option">Button 1</button>
                 <button className="nav-option">Button 2</button>
                 <button className="nav-option">Button 3</button>
-            </div>
+            </div> */}
         </div>
         </>
     )

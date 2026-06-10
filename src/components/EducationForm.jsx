@@ -25,7 +25,7 @@ export default function EducationForm({formData, visibilityToggleFunction, visib
     });
     };
 
-    const onSubmit = (e) => {e.preventDefault(); console.log("Education", forms); visibilityToggleFunction(forms)}
+    const onSubmit = (e) => {e.preventDefault(); visibilityToggleFunction(forms)}
 
     function toggleSectionVisibility(){
         visibilityToggleFunction(forms)
@@ -33,7 +33,6 @@ export default function EducationForm({formData, visibilityToggleFunction, visib
 
     useEffect(() => { setForms(Array.isArray(formData) ? formData : []); }, [formData]);
 
-    console.log(formData, visibilityToggleFunction, visibilityBoolean)
 
     if(!visibilityBoolean){
         return(
@@ -51,6 +50,7 @@ export default function EducationForm({formData, visibilityToggleFunction, visib
             <h1>Education Information</h1>
             <i className="fa-solid fa-chevron-up"></i>
         </button>
+        <h2>Edit Education Details</h2>
         <form onSubmit={onSubmit}>
         <div id="education-buttons-container">
             <button type="button" id="education-add-button" onClick={addItem}>Add</button>

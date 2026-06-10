@@ -22,7 +22,7 @@ function App() {
     if(sectionValues !== undefined){
       if (sectionKey === 'general') setGeneral(sectionValues)
       else if (sectionKey === "education") setEducation(Array.isArray(sectionValues) ? sectionValues : [])
-      else if (sectionKey === "experience") setExperience(sectionValues)
+      else if (sectionKey === "experience") setExperience(Array.isArray(sectionValues) ? sectionValues : [])
     }
     setCurrentlyOpenedSection(prev => ({...prev, [sectionKey]: ! prev[sectionKey]}))
   }
