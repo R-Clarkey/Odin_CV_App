@@ -2,6 +2,15 @@
     APP
 ==================================*/
 
+:root{
+    --primary-background-colour: #f9f9f9;
+    --secondary-background-colour: #2f343a;
+
+    --primary-text-colour: #333333;
+    --secondary-text-colour: #cccccc;
+
+}
+
 * {
   box-sizing:border-box;
   margin: 0;
@@ -18,14 +27,49 @@
     display: flex;
     flex-direction: column;
     width: 30%;
-    background-color: green;
+    background-color: var(--secondary-background-colour);
+    border-right: 1px solid var(--primary-background-colour);
 }
 
 #app-display-container{
     width: 70%;
-    background-color: red;
+    background-color: var(--secondary-background-colour);
 }
 
+.toggle-section{
+    background-color: var(--primary-background-colour);
+}
+
+.toggle-section-text{
+    color: var(--primary-text-colour);
+    font-size: 2rem;
+}
+
+.form-section{
+    position: relative;
+    background-color: var(--primary-background-colour);
+}
+
+.form-input-section{
+    padding: 5px;
+}
+
+.form-input-section input{
+    padding: 2px;
+}
+
+.buttons-container{
+    display: flex;
+    justify-content: right;
+}
+
+.form-button{
+    padding: 5px;
+    margin: 2px;
+    border-radius: 15%;
+    background-color: var(--secondary-background-colour);
+    color: var(--secondary-text-colour);
+}
 /* =================================
     NAV
 ==================================*/
@@ -33,10 +77,13 @@
 #nav-navbar{
     display: flex;
     flex: row;
-    background-color: blue;
-    justify-content: center;
+    background-color: var(--secondary-background-colour);
+    color: var(--secondary-text-colour);
+    border-bottom: 1px solid var(--primary-background-colour);
+    font-size: 1.5rem;
+    justify-content: left;
     align-items: center;
-    padding: 5px;
+    padding: 10px;
 }
 
 #nav-title{
@@ -64,3 +111,10 @@
 /* =================================
     GENERAL
 ==================================*/
+
+#general-save-button{
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}

@@ -5,7 +5,7 @@ export default function Nav(){
         <>
         <div id="nav-navbar">
             <div id="nav-title">
-                CV App
+                CV Application Builder
             </div>
             {/* <div id="nav-options-container">
                 <button className="nav-option">Button 1</button>

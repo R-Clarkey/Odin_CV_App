@@ -37,8 +37,8 @@ export default function EducationForm({formData, visibilityToggleFunction, visib
     if(!visibilityBoolean){
         return(
             <>
-            <button className="education-toggle-section" onClick={toggleSectionVisibility}>
-                <h1>Education Information</h1>
+            <button className="toggle-section" onClick={toggleSectionVisibility}>
+                <div className="toggle-section-text">Education Information</div>
                 <i className="fa-solid fa-chevron-down"></i>
             </button>
             </>
@@ -46,15 +46,15 @@ export default function EducationForm({formData, visibilityToggleFunction, visib
     }
     return(
         <>
-        <button className="education-toggle-section" onClick={toggleSectionVisibility}>
-            <h1>Education Information</h1>
+        <button className="toggle-section" onClick={toggleSectionVisibility}>
+            <div className="toggle-section-text">Education Information</div>
             <i className="fa-solid fa-chevron-up"></i>
         </button>
+        <form className="form-section" onSubmit={onSubmit}>
         <h2>Edit Education Details</h2>
-        <form onSubmit={onSubmit}>
-        <div id="education-buttons-container">
-            <button type="button" id="education-add-button" onClick={addItem}>Add</button>
-            <button type="submit" id="education-save-button">Save</button>
+        <div className="buttons-container">
+            <button className="form-button" type="button" id="education-add-button" onClick={addItem}>Add</button>
+            <button className="form-button" type="submit" id="education-save-button">Save</button>
         </div>
         {forms.map((item, i) => (
             <div key={i} className="education-item">
@@ -62,7 +62,7 @@ export default function EducationForm({formData, visibilityToggleFunction, visib
                 <input name="qualification" placeholder="Qualification" value={item.qualification} onChange={(e) => onChange(i, e)}/>
                 <input name="start" placeholder="Start Date" value={item.start} onChange={(e) => onChange(i, e)}/>
                 <input name="end" placeholder="End Date" value={item.end} onChange={(e) => onChange(i, e)}/>
-                <button type="button" onClick={() => removeItem(i)}>Remove</button>
+                <button className="form-button" type="button" onClick={() => removeItem(i)}>Remove</button>
             </div>
             
         ))}

@@ -38,8 +38,8 @@ export default function ExperienceForm({formData, visibilityToggleFunction, visi
     if(!visibilityBoolean){
         return(
             <>
-            <button className="experience-toggle-section" onClick={toggleSectionVisibility}>
-                <h1>Work Information</h1>
+            <button className="toggle-section" onClick={toggleSectionVisibility}>
+                <div className="toggle-section-text">Work Information</div>
                 <i className="fa-solid fa-chevron-down"></i>
             </button>
             </>
@@ -47,15 +47,15 @@ export default function ExperienceForm({formData, visibilityToggleFunction, visi
     }
     return(
         <>
-        <button className="experience-toggle-section" onClick={toggleSectionVisibility}>
-            <h1>Work Information</h1>
+        <button className="toggle-section" onClick={toggleSectionVisibility}>
+            <div className="toggle-section-text">Work Information</div>
             <i className="fa-solid fa-chevron-up"></i>
         </button>
+        <form className="form-section" onSubmit={onSubmit}>
         <h2>Edit Work Details</h2>
-        <form onSubmit={onSubmit}>
-        <div id="experience-buttons-container">
-            <button type="button" id="experience-add-button" onClick={addItem}>Add</button>
-            <button type="submit" id="experience-save-button">Save</button>
+        <div className="buttons-container">
+            <button className="form-button" type="button" id="experience-add-button" onClick={addItem}>Add</button>
+            <button className="form-button" type="submit" id="experience-save-button">Save</button>
         </div>
         {forms.map((item, i) => (
             <div key={i} className="experience-item">
@@ -63,7 +63,7 @@ export default function ExperienceForm({formData, visibilityToggleFunction, visi
                 <textarea  name="description" placeholder="Description" value={item.description} onChange={(e) => onChange(i, e)}/>
                 <input name="start" placeholder="Start Date" value={item.start} onChange={(e) => onChange(i, e)}/>
                 <input name="end" placeholder="End Date" value={item.end} onChange={(e) => onChange(i, e)}/>
-                <button type="button" onClick={() => removeItem(i)}>Remove</button>
+                <button className="form-button" type="button" onClick={() => removeItem(i)}>Remove</button>
             </div>
             
         ))}
