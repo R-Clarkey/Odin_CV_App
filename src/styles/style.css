@@ -3,8 +3,13 @@
 ==================================*/
 
 :root{
-    --primary-background-colour: #f9f9f9;
-    --secondary-background-colour: #2f343a;
+    --primary-background-colour: #1e2939;
+    --secondary-background-colour: #101828;
+    --tertiary-background-colour: #283243;
+
+    --border-colour: #293343;
+    --heading-text: #e5e7eb;
+    --small-heading-text: #d4d6db;
 
     --primary-text-colour: #333333;
     --secondary-text-colour: #cccccc;
@@ -28,7 +33,7 @@
     flex-direction: column;
     width: 30%;
     background-color: var(--secondary-background-colour);
-    border-right: 1px solid var(--primary-background-colour);
+    border-right: 1px solid var(--border-colour);
 }
 
 #app-display-container{
@@ -37,18 +42,26 @@
 }
 
 .toggle-section{
-    background-color: var(--primary-background-colour);
+    background-color: var(--tertiary-background-colour);
+    border: 1px solid var(--border-colour);
+    color: var(--heading-text);
+}
+
+.toggle-section:hover{
+    cursor: pointer;
+    background-color: var(--secondary-background-colour);
 }
 
 .toggle-section-text{
-    color: var(--primary-text-colour);
-    font-size: 2rem;
-}
+    font-size: 2rem;}
 
 .form-section{
     position: relative;
-    background-color: var(--primary-background-colour);
+    color: var(--small-heading-text);
+    background-color: var(--secondary-background-colour);
 }
+
+
 
 .form-input-section{
     padding: 5px;
@@ -79,7 +92,7 @@
     flex: row;
     background-color: var(--secondary-background-colour);
     color: var(--secondary-text-colour);
-    border-bottom: 1px solid var(--primary-background-colour);
+    border-bottom: 1px solid var(--border-colour);
     font-size: 1.5rem;
     justify-content: left;
     align-items: center;
@@ -97,12 +110,96 @@
 }
 
 /* =================================
-    CV
+    CVDisplay
 ==================================*/
+
+#display-cv-container{
+    margin: 2em 5em;
+    min-height: 90vh;
+    background-color: var(--secondary-text-colour);
+}
+
+#display-general-container{
+    display: grid;
+    grid-template-areas: 
+    "name name"
+    "email phone";
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #0e374e;
+    padding: 10px;
+}
+
+#display-general-name{
+    grid-area: name;
+    font-size: 1.5rem;
+}
+
+#display-general-email{
+    grid-area: email;
+}
+
+#display-general-phone{
+    grid-area: phone;
+}
+
+#display-education-container, #display-experience-container{
+    padding: 40px;
+}
+
+#display-education-title, #display-experience-title{
+    background-color: var(--secondary-background-colour);
+    color: var(--secondary-text-colour);
+    text-align: center;
+    padding: 20px;
+    font-size: 1.5rem;
+}
+
+.display-section-content{
+    padding: 20px;
+}
+
+.display-empty-form-message{
+    text-align: center;
+}
+
+.display-list-item{
+    display: grid;
+    padding: 5px 0px;
+    grid-template-areas: 
+    "qualification date"
+    "school school";
+}
+
+.display-item-qualification{
+    grid-area: qualification;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.display-item-date{
+    grid-area: date;
+    text-align: right;
+    font-size: 1rem;
+}
+
+.display-item-school{
+    grid-area: school;
+    font-size: 1rem;
+}
+
+
 
 /* =================================
     EDUCATION
 ==================================*/
+
+.education-item{
+    display: grid;
+    padding: 5px;
+}
 
 /* =================================
     EXPERIENCE
