@@ -1,217 +1,302 @@
 /* =================================
-    APP
+    APP STYLING
 ==================================*/
 
 :root{
-    --primary-background-colour: #1e2939;
-    --secondary-background-colour: #101828;
-    --tertiary-background-colour: #283243;
-
-    --border-colour: #293343;
-    --heading-text: #e5e7eb;
-    --small-heading-text: #d4d6db;
-
-    --primary-text-colour: #333333;
-    --secondary-text-colour: #cccccc;
-
+  --bg: #0b1220;
+  --surface: #101a2e;
+  --surface-2: #0f172a;
+  --text: #e5e7eb;
+  --muted: #a8b3c7;
+  --primary: #60a5fa;
+  --primary-2: #3b82f6;
+  --danger: #ef4444;
+  --border: rgba(148,163,184,.25);
+  --toggle-hover: rgba(96,165,250,.12);
+  --focus-shadow: rgba(59,130,246,.14);
+  --placeholder: rgba(168,179,199,.7);
+  --btn-bg: rgba(96,165,250,.14);
+  --btn-border: rgba(96,165,250,.35);
+  --btn-hover: rgba(96,165,250,.22);
+  --remove-border: rgba(239,68,68,.35);
+  --remove-text: #fca5a5;
+  --remove-hover: rgba(239,68,68,.10);
+  --title-bg: rgba(96,165,250,.12);
+  --title-border: rgba(96,165,250,.25);
+  --date-text: rgba(168,179,199,.95);
+  --school-text: rgba(229,231,235,.95);
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+  --radius: 0.6rem;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-7: 2rem;
 }
 
-* {
-  box-sizing:border-box;
-  margin: 0;
-  padding: 0;
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+
+body{
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.4;
 }
 
 #app-main-container{
-    display: flex;
-    flex-direction: row;
-    min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
 }
 
+/* =================================
+    FORMS
+==================================*/
+
 #app-forms-container{
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-    background-color: var(--secondary-background-colour);
-    border-right: 1px solid var(--border-colour);
+  display: flex;
+  flex-direction: column;
+  width: clamp(280px, 30vw, 420px);
+  background-color: var(--surface);
+  border-right: 1px solid var(--border);
+  padding: var(--space-5);
 }
 
 #app-display-container{
-    width: 70%;
-    background-color: var(--secondary-background-colour);
+  flex: 1;
+  background-color: var(--bg);
+  padding: var(--space-7);
 }
 
 .toggle-section{
-    background-color: var(--tertiary-background-colour);
-    border: 1px solid var(--border-colour);
-    color: var(--heading-text);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  padding: var(--space-3) var(--space-4);
 }
 
 .toggle-section:hover{
-    cursor: pointer;
-    background-color: var(--secondary-background-colour);
+  cursor: pointer;
+  background-color: var(--toggle-hover);
 }
 
 .toggle-section-text{
-    font-size: 2rem;}
+  font-size: 2rem;
+}
 
 .form-section{
-    position: relative;
-    color: var(--small-heading-text);
-    background-color: var(--secondary-background-colour);
+  position: relative;
+  color: var(--muted);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  padding: var(--space-4);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
-
-
 
 .form-input-section{
-    padding: 5px;
+  flex: 1 1 14rem;
+  min-width: 12rem;
+  display:flex;
+  flex-direction:column;
+  gap: var(--space-2);
 }
 
-.form-input-section input{
-    padding: 2px;
+.form-input-section label{
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.form-input-section input,
+.form-input-section textarea{
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background: transparent;
+  color: var(--text);
+  outline: none;
+  font-size: 0.95rem;
+  max-width: 100%;
+}
+
+.form-input-section input::placeholder{ color: var(--placeholder); }
+
+.form-input-section input:focus,
+.form-input-section textarea:focus{
+  border-color: var(--primary);
+  box-shadow: 0 6px 18px var(--focus-shadow);
 }
 
 .buttons-container{
-    display: flex;
-    justify-content: right;
+  display:flex;
+  justify-content:flex-end;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
 }
 
 .form-button{
-    padding: 5px;
-    margin: 2px;
-    border-radius: 15%;
-    background-color: var(--secondary-background-colour);
-    color: var(--secondary-text-colour);
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  background-color: var(--btn-bg);
+  border: 1px solid var(--btn-border);
+  color: var(--text);
 }
+
+.form-button:hover{
+  cursor: pointer;
+  background-color: var(--btn-hover);
+}
+
+.form-button-remove{
+  padding: 0.35rem 0.5rem;
+  background: transparent;
+  border: 1px solid var(--remove-border);
+  color: var(--remove-text);
+  border-radius: 0.4rem;
+  max-width: 8.5rem;
+}
+
+.form-button-remove:hover{
+  cursor: pointer;
+  background-color: var(--remove-hover);
+}
+
 /* =================================
     NAV
 ==================================*/
 
 #nav-navbar{
-    display: flex;
-    flex: row;
-    background-color: var(--secondary-background-colour);
-    color: var(--secondary-text-colour);
-    border-bottom: 1px solid var(--border-colour);
-    font-size: 1.5rem;
-    justify-content: left;
-    align-items: center;
-    padding: 10px;
+  display:flex;
+  flex-direction: row;
+  background-color: var(--surface-2);
+  color: var(--muted);
+  border-bottom: 1px solid var(--border);
+  font-size: 1.35rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-4);
 }
 
-#nav-title{
-    width: 70%;
-}
+#nav-title{ width: 70%; }
 
 #nav-options-container{
-    display: flex;
-    flex-direction: row;
-    width: 30%;
+  display:flex;
+  flex-direction: row;
+  gap: var(--space-4);
+  width: 30%;
+  justify-content: flex-end;
 }
 
 /* =================================
-    CVDisplay
+    CV Display
 ==================================*/
 
 #display-cv-container{
-    margin: 2em 5em;
-    min-height: 90vh;
-    background-color: var(--secondary-text-colour);
+  margin: 0;
+  min-height: calc(90vh - var(--space-7));
+  background: transparent;
 }
 
 #display-general-container{
-    display: grid;
-    grid-template-areas: 
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
     "name name"
     "email phone";
-    gap: 10px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-color: #0e374e;
-    padding: 10px;
+  gap: var(--space-3) var(--space-5);
+  text-align:center;
+  align-items: center;
+
+  background-color: var(--surface-2);
+  padding: var(--space-5);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
 
 #display-general-name{
-    grid-area: name;
-    font-size: 1.5rem;
+  grid-area: name;
+  font-size: 1.6rem;
 }
 
-#display-general-email{
-    grid-area: email;
-}
-
+#display-general-email,
 #display-general-phone{
-    grid-area: phone;
+  font-size: 1rem;
+  width: 100%;
 }
 
-#display-education-container, #display-experience-container{
-    padding: 40px;
+#display-education-container,
+#display-experience-container{
+  padding: var(--space-6);
+  margin-top: var(--space-5);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
 
-#display-education-title, #display-experience-title{
-    background-color: var(--secondary-background-colour);
-    color: var(--secondary-text-colour);
-    text-align: center;
-    padding: 20px;
-    font-size: 1.5rem;
+#display-education-title,
+#display-experience-title{
+  background-color: var(--title-bg);
+  border: 1px solid var(--title-border);
+  color: var(--text);
+  text-align:center;
+  padding: var(--space-4);
+  font-size: 1.35rem;
+  border-radius: calc(var(--radius) - 0.1rem);
 }
 
 .display-section-content{
-    padding: 20px;
+  padding: var(--space-4);
+  color: var(--muted);
 }
 
 .display-empty-form-message{
-    text-align: center;
+  text-align: center;
+  color: var(--muted);
 }
 
 .display-list-item{
-    display: grid;
-    padding: 5px 0px;
-    grid-template-areas: 
+  display:grid;
+  padding: var(--space-2) 0;
+  grid-template-areas:
     "qualification date"
     "school school";
+  gap: var(--space-1) var(--space-4);
 }
 
 .display-item-qualification{
-    grid-area: qualification;
-    font-size: 1.3rem;
-    font-weight: bold;
+  grid-area: qualification;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
 }
 
 .display-item-date{
-    grid-area: date;
-    text-align: right;
-    font-size: 1rem;
+  grid-area: date;
+  text-align: right;
+  font-size: 0.95rem;
+  color: var(--date-text);
 }
 
 .display-item-school{
-    grid-area: school;
-    font-size: 1rem;
+  grid-area: school;
+  font-size: 1rem;
+  color: var(--school-text);
 }
 
-
-
-/* =================================
-    EDUCATION
-==================================*/
-
-.education-item{
-    display: grid;
-    padding: 5px;
+.education-item,
+.experience-item{
+  display:grid;
+  padding: var(--space-3) 0;
 }
-
-/* =================================
-    EXPERIENCE
-==================================*/
-
-/* =================================
-    GENERAL
-==================================*/
 
 #general-save-button{
-    display: block;
-    position: absolute;
-    right: 0;
-    bottom: 0;
+  display:block;
+  position: absolute;
+  right: var(--space-4);
+  bottom: var(--space-4);
 }

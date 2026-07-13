@@ -75,7 +75,7 @@ export default function EducationForm({formData, visibilityToggleFunction, visib
                 <label htmlFor="end">End Date:</label>
                 <input name="end" placeholder="End Date" value={item.end} onChange={(e) => onChange(i, e)}/>
             </div>
-                <button className="form-button" type="button" onClick={() => removeItem(i)}>Remove</button>
+                <button className="form-button form-button-remove" type="button" onClick={() => removeItem(i)}>Remove</button>
             </div>
             
         ))}

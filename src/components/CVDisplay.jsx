@@ -13,7 +13,7 @@ export default function CVDisplay({general = {}, education = [], experience=[]})
                         {general.email || "john@smith.com"}
                     </div>
                     <div id="display-general-phone">
-                        {general.phone || "0774287405"}
+                        {general.phone || "+44 7XXX XXXXXX"}
                     </div>
             </div>
 

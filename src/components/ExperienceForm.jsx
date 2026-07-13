@@ -59,11 +59,27 @@ export default function ExperienceForm({formData, visibilityToggleFunction, visi
         </div>
         {forms.map((item, i) => (
             <div key={i} className="experience-item">
-                <input name="workplace" placeholder="Workplace" value={item.workplace} onChange={(e) => onChange(i, e)} />
-                <textarea  name="description" placeholder="Description" value={item.description} onChange={(e) => onChange(i, e)}/>
-                <input name="start" placeholder="Start Date" value={item.start} onChange={(e) => onChange(i, e)}/>
-                <input name="end" placeholder="End Date" value={item.end} onChange={(e) => onChange(i, e)}/>
-                <button className="form-button" type="button" onClick={() => removeItem(i)}>Remove</button>
+
+                <div className="form-input-section">
+                    <label htmlFor="workplace">Workplace:</label> 
+                    <input name="workplace" placeholder="Workplace" value={item.workplace} onChange={(e) => onChange(i, e)} />
+                </div>
+                
+                <div className="form-input-section">
+                    <label htmlFor="description">Description:</label> 
+                    <textarea  name="description" placeholder="Description" value={item.description} onChange={(e) => onChange(i, e)}/>
+                </div>
+
+                <div className="form-input-section">
+                    <label htmlFor="start">Start Date:</label> 
+                    <input name="start" placeholder="Start Date" value={item.start} onChange={(e) => onChange(i, e)}/>
+                </div>
+
+                <div className="form-input-section"> 
+                    <label htmlFor="end">End Date:</label>
+                    <input name="end" placeholder="End Date" value={item.end} onChange={(e) => onChange(i, e)}/>
+                </div>
+                    <button className="form-button form-button-remove" type="button" onClick={() => removeItem(i)}>Remove</button>
             </div>
             
         ))}
