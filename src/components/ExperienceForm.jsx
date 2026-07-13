@@ -57,32 +57,33 @@ export default function ExperienceForm({formData, visibilityToggleFunction, visi
             <button className="form-button" type="button" id="experience-add-button" onClick={addItem}>Add</button>
             <button className="form-button" type="submit" id="experience-save-button">Save</button>
         </div>
-        {forms.map((item, i) => (
-            <div key={i} className="experience-item">
-
-                <div className="form-input-section">
-                    <label htmlFor="workplace">Workplace:</label> 
-                    <input name="workplace" placeholder="Workplace" value={item.workplace} onChange={(e) => onChange(i, e)} />
-                </div>
-                
-                <div className="form-input-section">
-                    <label htmlFor="description">Description:</label> 
-                    <textarea  name="description" placeholder="Description" value={item.description} onChange={(e) => onChange(i, e)}/>
-                </div>
-
-                <div className="form-input-section">
-                    <label htmlFor="start">Start Date:</label> 
-                    <input name="start" placeholder="Start Date" value={item.start} onChange={(e) => onChange(i, e)}/>
-                </div>
-
-                <div className="form-input-section"> 
-                    <label htmlFor="end">End Date:</label>
-                    <input name="end" placeholder="End Date" value={item.end} onChange={(e) => onChange(i, e)}/>
-                </div>
-                    <button className="form-button form-button-remove" type="button" onClick={() => removeItem(i)}>Remove</button>
-            </div>
-            
-        ))}
+        <div className="form-item-container">
+            {forms.map((item, i) => (
+                <div key={i} className="experience-item">
+    
+                    <div className="form-input-section">
+                        <label htmlFor="workplace">Workplace:</label> 
+                        <input name="workplace" placeholder="Workplace" value={item.workplace} onChange={(e) => onChange(i, e)} />
+                    </div>
+                    
+                    <div className="form-input-section">
+                        <label htmlFor="description">Description:</label> 
+                        <textarea  name="description" placeholder="Description" value={item.description} onChange={(e) => onChange(i, e)}/>
+                    </div>
+    
+                    <div className="form-input-section">
+                        <label htmlFor="start">Start Date:</label> 
+                        <input name="start" placeholder="Start Date" value={item.start} onChange={(e) => onChange(i, e)}/>
+                    </div>
+    
+                    <div className="form-input-section"> 
+                        <label htmlFor="end">End Date:</label>
+                        <input name="end" placeholder="End Date" value={item.end} onChange={(e) => onChange(i, e)}/>
+                    </div>
+                        <button className="form-button form-button-remove" type="button" onClick={() => removeItem(i)}>Remove</button>
+                </div>        
+            ))}
+        </div>
         </form>
         </>
     )

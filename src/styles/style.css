@@ -164,6 +164,11 @@ body{
   background-color: var(--remove-hover);
 }
 
+.form-item-container{
+    max-height: 50vh;
+    overflow-y: scroll;
+}
+
 /* =================================
     NAV
 ==================================*/
